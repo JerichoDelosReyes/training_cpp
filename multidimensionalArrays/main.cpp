@@ -1,19 +1,27 @@
 #include <iostream>
 using namespace std;
 
-int main(){
+int main() {
+    int cube[2][3][4];
 
-    string cars[3][3] = {{"Civic", "Jazz", "City"}, 
-                        {"Vios", "Corolla", "Camry"},
-                        {"Corvette", "Durango", "Ram 1500"}};
-    int rows = sizeof(cars)/sizeof(cars[0]);
-    int columns = sizeof(cars[0])/sizeof(cars[0][0]);
+    cout << "Enter 24 elements for the 3D array:\n";
+    for (int i = 0; i < 2; i++) {
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 4; k++) {
+                cin >> cube[i][j][k];
+            }
+        }
+    }
 
-    for (int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < columns; j++)
-        {
-           cout << cars[i][j] << " ";
+
+    cout << "\nThe 3D array is:\n";
+    for (int i = 0; i < 2; i++) {
+        cout << "Layer " << i << ":\n";
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 4; k++) {
+                cout << cube[i][j][k] << " ";
+            }
+            cout << endl;
         }
         cout << endl;
     }
