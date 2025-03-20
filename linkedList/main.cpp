@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 struct Node
@@ -8,7 +7,7 @@ struct Node
     Node *next;
 };
 
-Node *head;
+Node *head = NULL;
 
 void Insert(int x)
 {
@@ -20,31 +19,24 @@ void Insert(int x)
 
 void Print()
 {
-    Node *temp = head;
-    cout << "List: ";
-    while (temp != NULL)
+    for (Node *temp = head; temp != NULL; temp = temp->next)
     {
         cout << temp->data << " ";
-        temp = temp->next;
     }
     cout << endl;
 }
 
 int main()
 {
-    int n, i, x;
-    head = NULL;
-
+    int n, x;
     cout << "How many numbers? \n";
     cin >> n;
-
-    for (i = 0; i < n; i++)
+    for (int i = 0; i < n; i++)
     {
         cout << "Enter the number: \n";
         cin >> x;
         Insert(x);
         Print();
     }
-
     return 0;
 }
